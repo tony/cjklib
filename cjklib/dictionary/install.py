@@ -343,7 +343,7 @@ class DictionaryInstaller(object):
         projectName='cjklib'):
 
         configuration = dbconnector.getDefaultConfiguration()
-        if not configuration['sqlalchemy.url'].startswith('sqlite://'):
+        if configuration['sqlalchemy.url'].startswith('sqlite://'):
             # only know how to connect to this database
             return configuration['sqlalchemy.url']
 
